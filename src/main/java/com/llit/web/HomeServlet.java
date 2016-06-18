@@ -1,6 +1,5 @@
 package com.llit.web;
 
-import javax.jws.WebService;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,12 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by LL on 2016/6/7.
+ * Created by LL on 2016/6/17.
  */
 @WebServlet("/home")
-public class HomeServlet extends HttpServlet{
+public class HomeServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Hello,Servlet");
+        req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req,resp);
     }
 }
